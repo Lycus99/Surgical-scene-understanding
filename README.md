@@ -4,7 +4,9 @@ arxiv上与手术场景理解的最新论文
 
 ## SurgicalGPT: End-to-End Language-Vision GPT for Visual Question Answering in Surgery
 作者：Lalithkumar Seenivasan， Hongliang Ren。 NUS，CUHK
+
 地址：https://arxiv.org/pdf/2304.09974.pdf
+
 总结：
 1. 使用LLM来进行手术领域的VQA，使用的模型是GPT2。
 2. 数据集是在已有的手术数据集（EndoVis18，Cholec80，PSI-AVA）基础上，将他们扩展成VQA。数据集没有公开
@@ -17,7 +19,9 @@ arxiv上与手术场景理解的最新论文
 
 ## Whether and When does Endoscopy Domain Pretraining Make Sense?
 作者：Dominik Batic, Nassir Navab  Computer Aided Medical Procedures, Technical University Munich, Garching, Germany
+
 地址：https://arxiv.org/pdf/2303.17636.pdf
+
 总结：
 1. 单独做一个手术领域的预训练模型，不用自然场景下的预训练模型。
 （这个想法还是很自然的，就像之前很多做其他类型医学图像的也都有做自己领域的预训练，但是效果都和ImageNet差不多，甚至不如。可能这就涉及到large-scale pretraining到底学习到了什么的理论问题）
