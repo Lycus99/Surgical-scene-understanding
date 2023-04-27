@@ -40,7 +40,9 @@ arxiv上与手术场景理解的最新论文
 
 ## Self-distillation for surgical action recognition
 作者：Amine Yamlah，Lena Maier-Hein DFKZ
+
 地址：https://arxiv.org/pdf/2303.12915.pdf
+
 总结：用self-distillation解决class imbalance和label ambiguity。
 ![image](https://user-images.githubusercontent.com/109274751/234743898-d8b09ee4-7487-4072-a184-76202a5d1178.png)
 未完待续
