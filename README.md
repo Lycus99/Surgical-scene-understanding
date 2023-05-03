@@ -1,6 +1,25 @@
 # Surgical-scene-understanding
 arxiv上与手术场景理解的最新论文
 
+23.05.03
+
+## SAM Meets Robotic Surgery: An Empirical Study in Robustness Perspective
+Authors: An Wang, Mobarakol Islam, Mengya Xu, Yang Zhang, Hongliang Ren∗
+
+Address: https://arxiv.org/pdf/2304.14674.pdf
+
+Summary: 
+使用SAM进行surgical segmentation
+Dataset: Endovis17(instrument), Endovis18(instrument+target)
+
+![image](https://user-images.githubusercontent.com/109274751/235827204-505e1728-0e41-42f4-9a8d-5ae777bea946.png)
+
+在利用bbox prompt的情况下，效果远好于之前的方法。但是只使用point prompt或unprompt时，效果不好。
+不能识别器械，在添加了各种干扰的情况下性能下降。（之前的方法肯定也会下降。。。）
+探索更多的微调方式
+
+
+23.04.27
 
 ## SurgicalGPT: End-to-End Language-Vision GPT for Visual Question Answering in Surgery
 作者：Lalithkumar Seenivasan， Hongliang Ren。 NUS，CUHK
