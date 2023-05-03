@@ -45,4 +45,12 @@ arxiv上与手术场景理解的最新论文
 
 总结：用self-distillation解决class imbalance和label ambiguity。
 ![image](https://user-images.githubusercontent.com/109274751/234743898-d8b09ee4-7487-4072-a184-76202a5d1178.png)
-未完待续
+网络结构：
+base model: Swin，最后一层换成节点数100的全连接
++multi: 同时输出instrument,verb,target,phase作为辅助任务
++selfd: teacher model: 使用swin在one-hot label上train 20 epochs，bce loss。训练后使用sigmoid输出训练student model
+
+为什么soft label和自蒸馏会提升模型性能？
+soft label可以解决标签错误或者模棱两可的问题。相比于数据集给出的错误标签，soft label可能更接近真正的标签，因此可以使得模型学习到更接近正确的知识
+
+
