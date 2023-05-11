@@ -1,6 +1,26 @@
 # Surgical-scene-understanding
 arxiv上与手术场景理解的最新论文
 
+23.05.11
+
+## MURPHY: Relations Matter in Surgical Workflow Analysis
+Shang Zhao, Yanzhe Liu, Qiyuan Wang, Dai Sun, Rong Liu, and S. Kevin Zhou, Fellow, IEEE,
+
+arxiv: 2212.12719v1
+
+Summary:
+1. 提出了一个大型的多层级手术数据集RLLS12M，其中包括2M图像和12M标签。规模上比CholecT50,PSIAVA都大，很值得做。标签之间有很强的相关性
+![image](https://github.com/Lycus99/Surgical-scene-understanding/assets/109274751/6a48840f-6a41-40cb-9ed2-d210d7fbb158)
+
+2. 提出了一个基于R-GCN和cross attention的模型
+
+![image](https://github.com/Lycus99/Surgical-scene-understanding/assets/109274751/9917e58a-44bc-4bc9-bcc3-3c825d435576)
+
+3. 很不理解为什么vit，swin的性能会下降
+![image](https://github.com/Lycus99/Surgical-scene-understanding/assets/109274751/d2f5adbc-9d94-4844-a1e2-fabf01e1250e)
+
+按照我的经验，swin-large的性能就基本超过了rdv。也没想到ms-tcn这么厉害，可能建模了标签之间的层级关系。
+
 23.05.03
 
 ## SAM Meets Robotic Surgery: An Empirical Study in Robustness Perspective
