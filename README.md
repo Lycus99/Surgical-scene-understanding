@@ -1,6 +1,42 @@
 # Surgical-scene-understanding
 arxiv上与手术场景理解的最新论文
 
+23.05.30
+
+## LAST: LAtent Space-constrained Transformers for Automatic Surgical Phase Recognition and Tool Presence Detection
+
+TMI Guoyan Zheng
+
+introduction
+
+1. model operation room, context-aware systems
+
+2. 术中和术后的phase recognition和tool presence detection好处
+
+3. hand-crafted 到 deep learning
+
+存在的问题：
+
+4. temporal information：固定的kernel size或固定的video clip长度；用相同的方式处理不同的任务；frame-level loss丢失语义结构
+
+5. In this paper：1. 通过transformer VAE学习语义信息。2.banded causal mask对不同任务使用不同长度的时序依赖。
+
+method
+
+1. VFE: Swin-base+两个分类头训练一个frame-level分类网络。phase recognition用softmax，tool用sigmoid。在后续只提取特征。
+
+2. FE：两个不同长度的使用banded causal mask的transformer encoder来提取时空特征
+
+3. Transformer VAE：将整段video的预测概率分布和真实标签分布输入到VAE中，使用KL散度计算损失进行对齐。有点对比学习的意思，在特征空间进行对齐
+
+4. 损失函数 L_All = Lp + Lt + β*L_KL, β=100
+
+不使用端到端，先训练一个frame-level网络。这样能够能够利用长时信息。
+
+![image](https://github.com/Lycus99/Surgical-scene-understanding/assets/109274751/942bf900-f8db-4933-8b70-e2f2a442228d)
+
+消融实验发现：1. phase-tool多任务能够提升精度；2. FE涨点很多，VAE的提升效果并不明显。3. 对于phase任务，长时依赖能达到1000s，而tool任务的时序依赖在10s左右。4. backbone很重要，swin-t效果好于res-101.建议试一下swin-L
+
 23.05.11
 
 ## MURPHY: Relations Matter in Surgical Workflow Analysis
